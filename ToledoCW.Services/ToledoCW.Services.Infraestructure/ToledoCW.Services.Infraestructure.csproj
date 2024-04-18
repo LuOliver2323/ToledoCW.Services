@@ -21,4 +21,9 @@
       <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\ToledoCW.Services.Core\ToledoCW.Services.Core.csproj" />
+      <ProjectReference Include="..\..\src\ToledoCW.Services.Domain\ToledoCW.Services.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,8 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToledoCW.Services", "ToledoCW.Services\ToledoCW.Services.csproj", "{E90C60FB-AFC2-4880-8613-AE222C6610C7}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToledoCW.Services", "ToledoCW.Services\ToledoCW.Services.csproj", "{E90C60FB-AFC2-4880-8613-AE222C6610C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToledoCW.Services.Infraestructure", "ToledoCW.Services.Infraestructure\ToledoCW.Services.Infraestructure.csproj", "{94ACBC63-906C-4B40-9DEA-4E6D68BC5533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToledoCW.Services.Infraestructure", "ToledoCW.Services.Infraestructure\ToledoCW.Services.Infraestructure.csproj", "{94ACBC63-906C-4B40-9DEA-4E6D68BC5533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToledoCW.Services.Domain", "..\src\ToledoCW.Services.Domain\ToledoCW.Services.Domain.csproj", "{BB0D8B41-638B-49D4-8BC4-AC409B33094A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToledoCW.Services.Application", "..\src\ToledoCW.Services.Application\ToledoCW.Services.Application.csproj", "{0FAAD47D-EF49-485E-8B72-1A161F26537F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToledoCW.Services.Core", "..\src\ToledoCW.Services.Core\ToledoCW.Services.Core.csproj", "{1D322641-F6F1-475C-8C2F-F0410791BF91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +27,23 @@ Global
 		{94ACBC63-906C-4B40-9DEA-4E6D68BC5533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94ACBC63-906C-4B40-9DEA-4E6D68BC5533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94ACBC63-906C-4B40-9DEA-4E6D68BC5533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0D8B41-638B-49D4-8BC4-AC409B33094A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0D8B41-638B-49D4-8BC4-AC409B33094A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0D8B41-638B-49D4-8BC4-AC409B33094A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0D8B41-638B-49D4-8BC4-AC409B33094A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FAAD47D-EF49-485E-8B72-1A161F26537F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FAAD47D-EF49-485E-8B72-1A161F26537F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FAAD47D-EF49-485E-8B72-1A161F26537F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FAAD47D-EF49-485E-8B72-1A161F26537F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D322641-F6F1-475C-8C2F-F0410791BF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D322641-F6F1-475C-8C2F-F0410791BF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D322641-F6F1-475C-8C2F-F0410791BF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D322641-F6F1-475C-8C2F-F0410791BF91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B50055A-6B7F-491D-A515-10E7E0739240}
 	EndGlobalSection
 EndGlobal
