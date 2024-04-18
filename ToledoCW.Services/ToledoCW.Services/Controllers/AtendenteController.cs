@@ -1,9 +1,11 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ToledoCW.Services.Infraestructure;
 using ToledoCW.Services.Infraestructure.Entidades;
 using ToledoCW.Services.Infraestructure.Repositorios;
 using ToledoCW.Services.Model;
 using ToledoCW.Services.Model.Request;
+using ToledoCW.Services.Model.Response;
 
 namespace ToledoCW.Services.Controllers;
 
@@ -11,11 +13,13 @@ namespace ToledoCW.Services.Controllers;
 [Route("[controller]")]
 public class AtendenteController : ApiBaseController
 {
-    private readonly AtendenteRepositorio _Repositorio;
+    private readonly IRepositorioBase<Atendente> _Repositorio;
+    private readonly IMapper _Mapper;
     
-    public AtendenteController()
+    public AtendenteController(IRepositorioBase<Atendente> repositorio, IMapper mapper)
     {
-        _Repositorio = new AtendenteRepositorio(new ToledoCWContext());
+        _Repositorio = repositorio;
+        _Mapper = mapper;
     }
     
     /// <summary>
@@ -28,7 +32,7 @@ public class AtendenteController : ApiBaseController
     public async Task<IActionResult> ObterTodosAtendente()
     {
         var _obj = await _Repositorio.GetAll();
-        return Response(_obj);
+        return Response(_Mapper.Map<List<ApiResponseAtendente>>(_obj));
     }
     
     /// <summary>
@@ -41,7 +45,7 @@ public class AtendenteController : ApiBaseController
     public async Task<IActionResult> ObterAtendente([FromRoute] long id)
     {
         var _obj = await _Repositorio.Get(x => x.Id == id);
-        return Response(_obj);
+        return Response(_Mapper.Map<ApiResponseAtendente>(_obj));
     }
 
     /// <summary>
@@ -55,10 +59,11 @@ public class AtendenteController : ApiBaseController
     {
         var _obj = await _Repositorio.Create(new Atendente
         {
-            Nome = request.Nome
+            Nome = request.Nome,
+            Estabelecimento = request.Estabelecimento
         });
         
-        return Response(_obj);
+        return Response(_Mapper.Map<ApiResponseAtendente>(_obj));
     }
 
     /// <summary>
@@ -76,7 +81,7 @@ public class AtendenteController : ApiBaseController
             Nome = request.Nome
         });
         
-        return Response(_obj);
+        return Response(_Mapper.Map<ApiResponseAtendente>(_obj));
     }
 
     /// <summary>
@@ -95,6 +100,6 @@ public class AtendenteController : ApiBaseController
         
         await _Repositorio.Delete(_obj);
         
-        return Response(_obj);
+        return Response(_Mapper.Map<ApiResponseAtendente>(_obj));
     }
 }

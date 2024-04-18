@@ -31,7 +31,10 @@ public class MapProfile : Profile
     
     private void ResponseMaps()
     {
-        CreateMap<ApiResponseAtendente, Atendente>().ReverseMap();
+        CreateMap<ApiResponseAtendente, Atendente>()
+            .ReverseMap()
+            .ForMember(dest => dest.NomeCompleto, opt => opt.MapFrom(src => src.Nome))
+            ;
         CreateMap<ApiResponseEstabelecimento, Estabelecimento>().ReverseMap();
     }
 }

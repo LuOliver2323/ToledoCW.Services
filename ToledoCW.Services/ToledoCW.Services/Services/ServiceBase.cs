@@ -59,7 +59,7 @@ public abstract class ServiceBase : IService
 
 public abstract class ServiceBase<TEntity> : ServiceBase, IService<TEntity> where TEntity : class
 {
-    private readonly RepositorioBase<TEntity> _RepoBase;
+    private readonly IRepositorioBase<TEntity> _RepoBase;
 
     protected ServiceBase(IServiceProvider serviceProvider) : base(serviceProvider)
     {
