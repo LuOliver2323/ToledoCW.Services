@@ -1,21 +1,22 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using ToledoCW.Services.Infraestructure.Entidades;
 
 namespace ToledoCW.Services.Infraestructure.Repositorios;
 
-public class RepositorioBase<T> where T : class
+public class RepositorioBase<T> : IRepositorioBase<T> where T : class
 {
     protected readonly DbContext DbContext;
     protected readonly DbSet<T> DbSet;
 
-    public RepositorioBase(DbContext dbContext)
+    public RepositorioBase(ToledoCWContext dbContext)
     {
         DbContext = dbContext;
         DbSet = DbContext.Set<T>();
     }
 
-    public async Task<T> Create(T entity)
+    public virtual async Task<T> Create(T entity)
     {
         await DbSet.AddAsync(entity);
         
@@ -39,7 +40,7 @@ public class RepositorioBase<T> where T : class
         else
             DbContext.Entry(entity).State = EntityState.Modified;
 
-        DbContext.SaveChanges();
+        Commit();
         
         return Task.FromResult(entity);
     }

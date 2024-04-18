@@ -30,7 +30,7 @@ public class ToledoCWContext : DbContext
     {
         base.OnConfiguring(optionsBuilder);
 
-        optionsBuilder.UseMySQL("Server=localhost;Database=toledocw;Uid=root;Pwd=root321;");
+        optionsBuilder.UseMySQL("Server=localhost;Database=toledocw;Uid=root;Pwd=123456;");
         
         optionsBuilder.UseLoggerFactory(Logger)
             .EnableSensitiveDataLogging()
@@ -61,7 +61,13 @@ public class ToledoCWContext : DbContext
             {
                 Id = 1,
                 Nome = "Estabelecimento 1"
-            });
+            },
+            new Estabelecimento
+            {
+                Id = 2,
+                Nome = "Estabelecimento 2"
+            }
+            );
         });
     }
 }
